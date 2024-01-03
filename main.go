@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"time"
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/cors"
@@ -19,6 +20,7 @@ type apiConfig struct {
 }
 
 func main() {
+
 	godotenv.Load()
 
 	port := os.Getenv("PORT")
@@ -36,9 +38,13 @@ func main() {
 		log.Fatal("Can't connect to the database: ", err)
 	}
 
+	db := database.New(conn)
+
 	apiCfg := apiConfig{
-		DB: database.New(conn),
+		DB: db,
 	}
+
+	go startScrapping(db, 10, time.Minute)
 
 	router := chi.NewRouter()
 
