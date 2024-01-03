@@ -2,10 +2,12 @@ package main
 
 import (
 	"context"
+	"database/sql"
 	"log"
 	"sync"
 	"time"
 
+	"github.com/google/uuid"
 	"github.com/karokojnr/didactic-octo-guacamole/internal/database"
 )
 
@@ -53,7 +55,34 @@ func scrapeFeed(wg *sync.WaitGroup, db *database.Queries, feed database.Feed) {
 	}
 
 	for _, item := range rssFeed.Channel.Item {
-		log.Println("Found post", item.Title, "on feed", feed.Name)
+		description := sql.NullString{}
+
+		if item.Description != "" {
+			description.String = item.Description
+			description.Valid = true
+		}
+
+		pubAt, err := time.Parse(time.RFC1123Z, item.PubDate)
+		if err != nil {
+			log.Printf("Couldn't parse date %v with err %v", item.PubDate, err)
+		}
+
+		_, err = db.CreatePost(
+			context.Background(),
+			database.CreatePostParams{
+				ID:          uuid.New(),
+				CreatedAt:   time.Now().UTC(),
+				UpdatedAt:   time.Now().UTC(),
+				Title:       item.Title,
+				Description: description,
+				PublishedAt: pubAt,
+				Url:         item.Link,
+				FeedID:      feed.ID,
+			},
+		)
+		if err != nil {
+			log.Println("failed to create post: ", err)
+		}
 	}
 
 	log.Printf("Feed %s collected, %v posts found", feed.Name, len(rssFeed.Channel.Item))
