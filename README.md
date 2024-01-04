@@ -14,13 +14,10 @@ PORT="8000"
 DB_URL=[YOUR_POSTGRES_DB_URL]
 ```
 
-## DB migrations
+Perform DB migrations
 
 ```bash
-cd sql/schema
-goose postgres postgres://karokojnr:@localhost:5432/rssagg up
-cd ../../
-sqlc generate
+cd sql/schema && goose postgres postgres://karokojnr:@localhost:5432/rssagg up && cd ../../ && sqlc generate
 ```
 
 Run the server:
