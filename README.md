@@ -1,7 +1,6 @@
 # RSS Aggregator
 
-Blog aggregator service in GO
-
+This application aggregates multiple RSS feeds from various websites and stores them in a centralized database. Subscribing to content is made easy and convenient, without the need to visit different websites or pages.
 
 ## Local Development
 
