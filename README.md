@@ -25,4 +25,14 @@ Run the server:
 go build -o didactic-octo-guacamole && ./didactic-octo-guacamole
 ```
 
-
+### API Endpoints
+| Method | Endpoints | Action |
+| --- | --- | --- |
+| POST | /api/v1/users | To create a new users and assign API key |
+| GET | /api/V1/users | To retrieves user details |
+| POST | /api/v1/feeds | To create a new feed |
+| GET | /api/v1/feeds | To retrieve all feeds |
+| POST | /api/v1/feed_follows | To follow a feed |
+| GET | /api/v1/feed_follows | To retrieve followed feeds |
+| DELETE | /api/v1/feed_follows/:feedFollowID | To unfollow a feed |
+| GET | /api/v1/posts | To retrieve posts from followed feeds |

@@ -73,7 +73,7 @@ func main() {
 
 	v1Router.Get("/posts", apiCfg.middlewareAuth(apiCfg.handlerGetPostsForUser))
 
-	router.Mount("/v1", v1Router)
+	router.Mount("/api/v1", v1Router)
 
 	srv := &http.Server{
 		Handler: router,
