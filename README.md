@@ -2,9 +2,12 @@
 
 This application aggregates multiple RSS feeds from various websites and stores them in a centralized database. Subscribing to content is made easy and convenient, without the need to visit different websites or pages.
 
-## Local Development
+## Prerequisites
+ - Go version 1.20+
+ - PostgreSQL 14+
+ - sqlc
 
-Make sure you're on Go version 1.20+.
+## Local Development
 
 Create a `.env` file in the root of the project with the following contents:
 
