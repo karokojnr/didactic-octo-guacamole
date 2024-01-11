@@ -5,7 +5,8 @@ This application aggregates multiple RSS feeds from various websites and stores 
 ## Prerequisites
  - Go version 1.20+
  - PostgreSQL 14+
- - sqlc
+ - sqlc 1.24.0
+ - goose 3.17.0
 
 ## Local Development
 
