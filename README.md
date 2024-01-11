@@ -55,7 +55,7 @@ Authorization ApiKey [API_KEY]
 
 These request are:
     
-    - GET    /api/V1/users
+    - GET    /api/v1/users
     - POST   /api/v1/feeds
     - POST   /api/v1/feed_follows
     - GET    /api/v1/feed_follows
