@@ -49,7 +49,9 @@ Some requests require the use of API key.
 
 To authenticate an API request, you should provide your API key in the `Authorization` header:
 
-`Authorization` ApiKey [API_KEY]
+```bash
+Authorization ApiKey [API_KEY]
+``````
 
 These request are:
     
