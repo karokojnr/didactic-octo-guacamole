@@ -13,8 +13,8 @@ This application aggregates multiple RSS feeds from various websites and stores 
 Create a `.env` file in the root of the project with the following contents:
 
 ```bash
-PORT="8000"
-DB_URL=[YOUR_POSTGRES_DB_URL]
+PORT= "8000"
+DB_URL= "[YOUR_POSTGRES_DB_URL]"
 ```
 
 Perform DB migrations
