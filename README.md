@@ -36,9 +36,9 @@ go build -o didactic-octo-guacamole && ./didactic-octo-guacamole
 | GET | /api/v1/users | To retrieves user details |
 | POST | /api/v1/feeds | To create a new feed |
 | GET | /api/v1/feeds | To retrieve all feeds |
-| POST | /api/v1/feed_follows | To follow a feed |
-| GET | /api/v1/feed_follows | To retrieve followed feeds |
-| DELETE | /api/v1/feed_follows/:feedFollowID | To unfollow a feed |
+| POST | /api/v1/feed-follows | To follow a feed |
+| GET | /api/v1/feed-follows | To retrieve followed feeds |
+| DELETE | /api/v1/feed-follows/:feedFollowID | To unfollow a feed |
 | GET | /api/v1/posts | To retrieve posts from followed feeds |
 
 
@@ -57,7 +57,7 @@ These request are:
     
     - GET    /api/v1/users
     - POST   /api/v1/feeds
-    - POST   /api/v1/feed_follows
-    - GET    /api/v1/feed_follows
-    - DELETE /api/v1/feed_follows/:feedFollowID
+    - POST   /api/v1/feed-follows
+    - GET    /api/v1/feed-follows
+    - DELETE /api/v1/feed-follows/:feedFollowID
     - GET    /api/v1/posts
