@@ -59,5 +59,5 @@ These request are:
     - POST   /api/v1/feeds
     - POST   /api/v1/feed-follows
     - GET    /api/v1/feed-follows
-    - DELETE /api/v1/feed-follows/:feedFollowID
+    - DELETE /api/v1/feed-follows/:feed_follow_id
     - GET    /api/v1/posts
